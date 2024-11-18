@@ -1,14 +1,12 @@
 import random
 import time
 
-
-# 
+# general fonc
 def sleep(x):
     time.sleep(x)
 
-
+# to get balance
 def get_balance():
-
     balance = input("Welcome to the game.. How much would you like to deposit today?: $")
     if balance.isdigit():
         balance = int(balance)
@@ -18,8 +16,7 @@ def get_balance():
     else:
         print("Please enter a valid amount!")
 
-
-    
+# to ask for current spin round   
 def dice_spin():
     while True:
         spin = input("Would you like to dice for this round(y / n , q to quit)?: ").lower()
@@ -34,7 +31,7 @@ def dice_spin():
             print("No Betting huh! Never forget that Do not roll the dice if you can't price!")    
             return False
         
-
+# to get the bet
 def get_bet(balance):
     max_bet = min(1000,balance)
 
@@ -68,7 +65,7 @@ def get_bet_lines():
         else:
             print("Please enter a valid number of line(s)")
 
-
+# spinning result check
 def spinning_of_dices(total_balance):
     print("Dicing...")
     sleep(1)
@@ -82,6 +79,7 @@ def spinning_of_dices(total_balance):
     else:
         return False
 
+# mainly check total balance after winning/losing
 def game():
          total_balance = get_balance()
     
@@ -110,6 +108,7 @@ def game():
                 print("You are out of money man! Let's call it a day and just go home..")
             break
 
+# to work it out
 def main():
     game()
 
